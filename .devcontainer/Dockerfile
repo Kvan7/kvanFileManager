@@ -13,7 +13,15 @@ RUN apt-get update && apt-get install -y \
     librsvg2-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# ARG USERNAME=vscode
+# Copy terminal config
+# COPY /home/.zshr[c] /home/vscode/
+# COPY /home/.test.tx[t] /home/vscode/
+# COPY /home/.oh-my-zs[h] /home/vscode/
+# COPY /home/.zsh_histor[y] /home/vscode/
+# COPY /home/.zprofil[e] /home/vscode/
+# COPY /usr/local/bin/pokemon-colorscript[s] /usr/local/bin/
+
+ARG USERNAME=vscode
 # ARG USER_UID=1000
 # ARG USER_GID=$USER_UID
 
@@ -33,3 +41,9 @@ RUN apt-get update && apt-get install -y \
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 # USER $USERNAME
+
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
+    && mkdir /commandhistory \
+    && touch /commandhistory/.bash_history \
+    && chown -R $USERNAME /commandhistory \
+    && echo "$SNIPPET" >> "/home/$USERNAME/.bashrc"

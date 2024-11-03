@@ -1,0 +1,86 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+    "name": "Debian",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils": {},
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers/features/rust:1": {}
+    },
+    "mounts": [
+        {
+            "source": "devcontainer-cargo-cache-${devcontainerId}",
+            "target": "/usr/local/cargo",
+            "type": "volume"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "svelte.svelte-vscode",
+                "esbenp.prettier-vscode",
+                "rvest.vs-code-prettier-eslint",
+                "tauri-apps.tauri-vscode",
+                "bradlc.vscode-tailwindcss",
+                "Gruntfuggly.todo-tree",
+                "pflannery.vscode-versionlens",
+                // Personal Preference Extensions
+                "patbenatar.advanced-new-file",
+                "formulahendry.code-runner",
+                "streetsidesoftware.code-spell-checker",
+                "vadimcn.vscode-lldb",
+                "adpyke.codesnap",
+                "joshbolduc.commitlint",
+                "cschlosser.doxdocgen",
+                "sleistner.vscode-fileutils",
+                "mhutchie.git-graph",
+                "codezombiech.gitignore",
+                "eamodio.gitlens",
+                "kisstkondoros.vscode-gutter-preview",
+                "ecmel.vscode-html-css",
+                "oderwat.indent-rainbow",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                "goessner.mdmath",
+                "DavidAnson.vscode-markdownlint",
+                "ryu1kn.partial-diff",
+                "quicktype.quicktype",
+                "christian-kohler.path-intellisense",
+                "PrateekMahendrakar.prettyxml",
+                "mechatroner.rainbow-csv",
+                "humao.rest-client",
+                "outofsync42.select-compare-tabs",
+                "stylelint.vscode-stylelint",
+                "Supermaven.supermaven",
+                "neptunedesign.vs-sequential-number",
+                "xUnn4m3DD.vscode-paint",
+                "tonybaloney.vscode-pets",
+                "EliverLara.andromeda",
+                "formulahendry.auto-rename-tag",
+                "jeff-hykin.better-shellscript-syntax",
+                "alefragnani.Bookmarks",
+                "mikestead.dotenv",
+                "hediet.vscode-drawio",
+                "usernamehw.errorlens",
+                "usernamehw.find-jump",
+                "PKief.material-icon-theme",
+                "IBM.output-colorizer",
+                "johnpapa.vscode-peacock",
+                "semanticdiff.semanticdiff",
+                "BriteSnow.vscode-toggle-quotes"
+            ]
+        }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Configure tool-specific properties.
+    // "customizations": {},
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    "remoteUser": "vscode"
+}

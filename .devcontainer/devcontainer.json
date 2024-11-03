@@ -4,8 +4,10 @@
     "name": "Debian",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "build": {
-        "dockerfile": "Dockerfile",
+        "dockerfile": "Dockerfile"
     },
+    // "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    // "image": "mcr.microsoft.com/vscode/devcontainers/rust:latest",
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {
         "ghcr.io/devcontainers/features/common-utils": {},
@@ -73,14 +75,25 @@
                 "IBM.output-colorizer",
                 "johnpapa.vscode-peacock",
                 "semanticdiff.semanticdiff",
-                "BriteSnow.vscode-toggle-quotes"
+                "BriteSnow.vscode-toggle-quotes",
+                "ms-azuretools.vscode-docker"
             ]
         }
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
+    // "postStartCommand": "git config --global --add safe.directory /workspaces/kmusic",
+    // "postStartCommand": "export DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev && rm -rf /var/lib/apt/lists/*",
     // Configure tool-specific properties.
     // "customizations": {},
+    "runArgs": [
+        "--userns=keep-id:uid=1000,gid=1000"
+    ],
+    "containerUser": "vscode",
+    "updateRemoteUserUID": true,
+    "containerEnv": {
+        "HOME": "/home/vscode"
+    }
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    "remoteUser": "vscode"
+    // "remoteUser": "vscode"
 }

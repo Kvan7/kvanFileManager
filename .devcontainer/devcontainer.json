@@ -19,6 +19,12 @@
             "source": "devcontainer-cargo-cache-${devcontainerId}",
             "target": "/usr/local/cargo",
             "type": "volume"
+        },
+        {
+            // Mount ssh key
+            "source": "${localEnv:HOME}/.ssh",
+            "target": "/home/vscode/",
+            "type": "bind"
         }
     ],
     "customizations": {

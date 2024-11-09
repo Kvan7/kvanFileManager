@@ -23,7 +23,7 @@
         {
             // Mount ssh key
             "source": "${localEnv:HOME}/.ssh",
-            "target": "/home/vscode/",
+            "target": "/home/vscode/.ssh",
             "type": "bind"
         }
     ],
@@ -37,7 +37,6 @@
                 "bradlc.vscode-tailwindcss",
                 "Gruntfuggly.todo-tree",
                 "pflannery.vscode-versionlens",
-                // Personal Preference Extensions
                 "patbenatar.advanced-new-file",
                 "formulahendry.code-runner",
                 "streetsidesoftware.code-spell-checker",
@@ -82,7 +81,8 @@
                 "johnpapa.vscode-peacock",
                 "semanticdiff.semanticdiff",
                 "BriteSnow.vscode-toggle-quotes",
-                "ms-azuretools.vscode-docker"
+                "ms-azuretools.vscode-docker",
+                "vivaxy.vscode-conventional-commits"
             ]
         }
     },

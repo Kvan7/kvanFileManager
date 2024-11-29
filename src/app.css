@@ -1,5 +1,18 @@
-@import 'tailwindcss/preflight';
-@tailwind utilities;
+@import 'tailwindcss/preflight' layer(utilities);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@theme {
+	--color-colbalt-50: #8a778e;
+	--color-colbalt-100: #806d84;
+	--color-colbalt-200: #76637a;
+	--color-colbalt-300: #6c5970;
+	--color-colbalt-400: #624f66;
+	--color-colbalt-500: #58455c;
+	--color-colbalt-600: #4e3b52;
+	--color-colbalt-700: #443148;
+	--color-colbalt-800: #3a273e;
+	--color-colbalt-900: #301d34;
+}
 
 :root {
 	font-synthesis: none;

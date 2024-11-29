@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libayatana-appindicator3-dev \
     librsvg2-dev \
+    xorg \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy terminal config

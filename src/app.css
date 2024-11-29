@@ -1,0 +1,9 @@
+@import 'tailwindcss/preflight';
+@tailwind utilities;
+
+:root {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+	@apply text-neutral-950 bg-neutral-100 font-normal text-base antialiased font-sans;
+}
